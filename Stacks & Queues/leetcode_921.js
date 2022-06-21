@@ -1,0 +1,19 @@
+function minAddToMakeValid(s){
+    let stack = []
+    let ans = 0
+
+    for(let i = 0; i < s.length; i++){
+        if(s[i] === '(') stack.push('(')
+        else{
+            if(stack.length === 0) ans++
+            else stack.pop()
+        }
+    }
+
+    ans += stack.length
+
+    return ans
+}
+
+console.log(minAddToMakeValid(
+    "()))(("))
